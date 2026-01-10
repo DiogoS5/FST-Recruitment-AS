@@ -12,7 +12,9 @@ int main(int argc, char **argv) {
 
     while(ros::ok()) {
         std_msgs::Int32 msg;
-        msg.data = 7;
+        if(!(std::cin >> msg.data)){
+            std::cout << "Please enter a valid integer\n";
+        };
 
         test_pub.publish(msg);
 
