@@ -211,7 +211,9 @@ include_directories(
 
 # Publisher
 add_executable(publisher_node src/publisher_node.cpp)
-add_dependencies(publisher_node ${publisher_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(publisher_node
-    ${catkin_LIBRARIES}
-)
+add_dependencies(publisher_node ${publisher_node_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(publisher_node ${catkin_LIBRARIES})
+#Subscriber
+add_executable(subscriber_node src/subscriber_node.cpp)
+add_dependencies(subscriber_node ${subscriber_node_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(subscriber_node ${catkin_LIBRARIES})
