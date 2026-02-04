@@ -1,6 +1,5 @@
 #include "ros/ros.h"
 #include "task2/coords_2d_array.h"
-#include <string>
 
 class CoordinatePublisher {
 public:
@@ -11,7 +10,7 @@ public:
     void publish() {
         if (pub) {
             pub.publish(msg);
-            ROS_INFO("Published coordinates");
+            ROS_DEBUG("Published coordinates");
         } else {
             ROS_ERROR("Publisher not initialized!");
         }
